@@ -15,8 +15,8 @@ npm run build   # out/ 디렉토리에 정적 파일 생성
 `main` 브랜치에 푸시하면 `.github/workflows/deploy.yml`이 빌드 후 GitHub Pages에 배포합니다.
 
 - 저장소 Settings → Pages → **Source: GitHub Actions** 로 설정해야 합니다.
-- 주소: https://loobatosoft.github.io/loobatosoft/
-- basePath는 Actions에서 자동 설정됩니다. 커스텀 도메인을 쓰면 별도 수정이 필요 없습니다.
+- 주소: https://www.loobatosoft.com (커스텀 도메인, `public/CNAME`)
+- basePath는 Actions에서 자동 설정됩니다.
 
 ## 구조
 
