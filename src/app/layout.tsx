@@ -1,23 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Sans_KR } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
-const notoSansKr = Noto_Sans_KR({
-  variable: "--font-noto-sans-kr",
-  subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
+// Interop (Inter + Noto Sans KR), SIL OFL — https://github.com/jhaemin/Interop
+// Each weight is ~1MB, so skip preloading and let text render with the fallback first.
+const interop = localFont({
+  variable: "--font-interop",
+  src: [
+    { path: "../fonts/interop/Interop-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/interop/Interop-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/interop/Interop-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../fonts/interop/Interop-ExtraBold.woff2", weight: "800", style: "normal" },
+  ],
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -30,7 +34,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
-      className={`${geistSans.variable} ${geistMono.variable} ${notoSansKr.variable} h-full antialiased`}
+      className={`${interop.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />

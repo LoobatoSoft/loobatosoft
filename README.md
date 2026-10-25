@@ -1,6 +1,6 @@
 # 루바토소프트 (LoobatoSoft) 홈페이지
 
-Next.js(App Router) + Tailwind CSS 기반 회사 홈페이지입니다. 정적 export(`out/`)로 빌드되어 GitHub Pages에 배포됩니다.
+Next.js(App Router) + Tailwind CSS 기반 회사 홈페이지입니다. 폰트는 [Interop](https://github.com/jhaemin/Interop)(SIL OFL, `src/fonts/interop`)을 사용합니다. 정적 export(`out/`)로 빌드되어 GitHub Pages에 배포됩니다.
 
 ## 개발
 

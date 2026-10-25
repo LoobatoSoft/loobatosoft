@@ -18,7 +18,7 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-soft: var(--accent-soft);
-  --font-sans: var(--font-noto-sans-kr), var(--font-geist-sans), system-ui, sans-serif;
+  --font-sans: var(--font-interop), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
