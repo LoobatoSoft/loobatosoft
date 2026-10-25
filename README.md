@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 루바토소프트 (LoobatoSoft) 홈페이지
 
-## Getting Started
+Next.js(App Router) + Tailwind CSS 기반 회사 홈페이지입니다. 정적 export(`out/`)로 빌드되어 GitHub Pages에 배포됩니다.
 
-First, run the development server:
+## 개발
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # out/ 디렉토리에 정적 파일 생성
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 배포
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`main` 브랜치에 푸시하면 `.github/workflows/deploy.yml`이 빌드 후 GitHub Pages에 배포합니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- 저장소 Settings → Pages → **Source: GitHub Actions** 로 설정해야 합니다.
+- 주소: https://loobatosoft.github.io/loobatosoft/
+- basePath는 Actions에서 자동 설정됩니다. 커스텀 도메인을 쓰면 별도 수정이 필요 없습니다.
 
-## Learn More
+## 구조
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/page.tsx` — 메인 페이지 (회사소개 / 서비스 / 핵심가치 / 문의)
+- `src/components/site.ts` — 회사명, 이메일, 메뉴 등 공통 정보
+- `src/components/Header.tsx`, `Footer.tsx` — 공통 레이아웃
