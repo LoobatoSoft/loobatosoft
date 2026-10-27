@@ -7,14 +7,9 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {company.nameKo} ({company.name})
         </p>
-        <p className="flex gap-5">
-          <a href={`mailto:${company.email}`} className="hover:text-foreground">
-            {company.email}
-          </a>
-          <a href={company.github} target="_blank" rel="noreferrer" className="hover:text-foreground">
-            GitHub
-          </a>
-        </p>
+        <a href={`mailto:${company.email}`} className="hover:text-foreground">
+          {company.email}
+        </a>
       </div>
     </footer>
   );

@@ -20,6 +20,14 @@ npm run build   # out/ 디렉토리에 정적 파일 생성
 
 ## 구조
 
-- `src/app/page.tsx` — 메인 페이지 (회사소개 / 서비스 / 핵심가치 / 문의)
-- `src/components/site.ts` — 회사명, 이메일, 메뉴 등 공통 정보
+- `src/app/page.tsx` — 메인 페이지
+- `src/app/subway/page.tsx` — 실시간지하철 소개 페이지
+- `src/components/site.ts` — 회사명, 이메일, 스토어 링크 등 공통 정보
 - `src/components/Header.tsx`, `Footer.tsx` — 공통 레이아웃
+
+## 실시간지하철 이미지
+
+`public/images/silsiganmetro/`에 넣으면 빌드할 때 자동으로 반영됩니다.
+
+- `icon.png` — 앱 아이콘 (정사각형, 512×512 이상 권장)
+- `screenshots/` — 앱 스크린샷. 파일 이름 순서대로 표시됩니다 (`01.png`, `02.png`, …). png / jpg / webp 가능.
