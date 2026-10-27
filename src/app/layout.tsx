@@ -30,12 +30,30 @@ export const metadata: Metadata = {
     "루바토소프트(LoobatoSoft)는 웹·모바일·클라우드 소프트웨어를 설계하고 만드는 소프트웨어 회사입니다.",
 };
 
+// Runs before paint so the saved (or system) theme is applied without a flash.
+const themeScript = `(() => {
+  const root = document.documentElement;
+  const media = window.matchMedia("(prefers-color-scheme: dark)");
+  let saved = null;
+  try { saved = localStorage.getItem("theme"); } catch {}
+  root.dataset.theme = saved === "light" || saved === "dark" ? saved : media.matches ? "dark" : "light";
+  media.addEventListener("change", (e) => {
+    let stored = null;
+    try { stored = localStorage.getItem("theme"); } catch {}
+    if (!stored) root.dataset.theme = e.matches ? "dark" : "light";
+  });
+})();`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="ko"
+      suppressHydrationWarning
       className={`${interop.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>

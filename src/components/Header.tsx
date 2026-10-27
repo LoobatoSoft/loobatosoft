@@ -1,28 +1,28 @@
 import { company, navItems } from "./site";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2 font-extrabold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-sm text-white">
-            L
-          </span>
-          <span>{company.name}</span>
+    <header className="border-b border-rule">
+      <div className="mx-auto flex max-w-6xl items-baseline justify-between gap-6 px-4 py-5 sm:px-6">
+        <a href="#top" className="text-lg font-bold tracking-tight">
+          {company.nameKo}
+          <span className="ml-2 text-sm font-normal text-muted">{company.name}</span>
         </a>
-        <nav className="hidden gap-8 text-sm font-medium text-muted md:flex">
-          {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="transition-colors hover:text-foreground">
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="#contact"
-          className="rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition-opacity hover:opacity-85"
-        >
-          문의하기
-        </a>
+        <div className="flex items-baseline gap-7">
+          <nav className="hidden gap-7 text-sm sm:flex">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="underline-offset-4 hover:text-accent hover:underline"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );

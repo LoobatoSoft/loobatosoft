@@ -6,8 +6,8 @@ export const company = {
 };
 
 export const navItems = [
-  { href: "#about", label: "회사소개" },
-  { href: "#services", label: "서비스" },
-  { href: "#values", label: "핵심가치" },
-  { href: "#contact", label: "문의하기" },
+  { href: "#about", label: "회사" },
+  { href: "#work", label: "하는 일" },
+  { href: "#how", label: "일하는 방식" },
+  { href: "#contact", label: "연락" },
 ];
