@@ -13,7 +13,7 @@ export default function PolicyPage({ title, app, html }: { title: string; app: s
       <h1 className="mt-2 text-3xl font-extrabold tracking-tight">{title}</h1>
       <div className="mt-6 h-px bg-rule" />
       <div
-        className="text-[15px] leading-7 [&_em]:not-italic [&_em]:font-bold [&_h3]:mt-10 [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-muted"
+        className="text-[15px] leading-7 [&_em]:not-italic [&_em]:font-bold [&_strong]:font-bold [&_strong]:text-foreground [&_h3]:mt-10 [&_h3]:text-lg [&_h3]:font-bold [&_p]:mt-3 [&_p]:text-muted [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:space-y-1 [&_ul]:pl-5 [&_ul]:text-muted [&_ol]:mt-3 [&_ol]:list-decimal [&_ol]:space-y-1 [&_ol]:pl-5 [&_ol]:text-muted [&_a]:underline [&_a]:underline-offset-4"
         dangerouslySetInnerHTML={{ __html: html }}
       />
     </article>
